@@ -12,13 +12,18 @@ const Contact = () => {
             commodi totam aspernatur quos nisi, corporis itaque reiciendis fuga
             error dolorem.
           </p>
-          <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+          <form
+            className="contact-form"
+            action={`https://formspree.io/${process.env.REACT_APP_FORMSPREE}`}
+            method="POST"
+          >
             <input
               type="email"
               placeholder="enter email"
               className="form-input"
+              name="_replyto"
             />
-            <button type="submit" className="submit-btn">
+            <button type="submit" className="submit-btn" value="Send">
               subscribe
             </button>
           </form>
