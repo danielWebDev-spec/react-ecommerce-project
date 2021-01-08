@@ -34,6 +34,15 @@ export const ProductsProvider = ({ children }) => {
     });
   };
 
+  const fetchProducts = async (url) => {
+    const response = await axios.get(url);
+    console.log(response);
+  };
+
+  useEffect(() => {
+    fetchProducts(url);
+  }, []);
+
   return (
     <ProductsContext.Provider
       value={{
