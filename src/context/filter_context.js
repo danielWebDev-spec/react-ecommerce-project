@@ -96,7 +96,11 @@ export const FilterProvider = ({ children }) => {
     });
   };
 
-  const clearFilters = () => {};
+  const clearFilters = () => {
+    dispatch({
+      type: CLEAR_FILTERS,
+    });
+  };
 
   return (
     <FilterContext.Provider
