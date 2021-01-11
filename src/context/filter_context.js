@@ -15,6 +15,7 @@ import { useProductsContext } from "./products_context";
 const initialState = {
   filtered_products: [],
   all_products: [],
+  grid_view: false,
 };
 
 const FilterContext = React.createContext();
@@ -28,6 +29,7 @@ export const FilterProvider = ({ children }) => {
     dispatch({
       type: LOAD_PRODUCTS,
       payload: products,
+      grid_view: false,
     });
   }, [products]);
 
