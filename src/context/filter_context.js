@@ -33,10 +33,23 @@ export const FilterProvider = ({ children }) => {
     });
   }, [products]);
 
+  const setGridView = () => {
+    dispatch({
+      type: SET_GRIDVIEW,
+    });
+  };
+  const setListView = () => {
+    dispatch({
+      type: SET_LISTVIEW,
+    });
+  };
+
   return (
     <FilterContext.Provider
       value={{
         ...state,
+        setGridView,
+        setListView,
       }}
     >
       {children}
